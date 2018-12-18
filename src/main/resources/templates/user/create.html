@@ -5,7 +5,7 @@
     <title>Create new user</title>
 </head>
 <body>
-<a href="/">Back to List User</a>
+<a href="/users">Back to List User</a>
 <h1>Create new user: </h1>
 <form th:action="@{/create-user}" th:object="${user}" method="post">
     <table>
@@ -32,7 +32,6 @@
         <tr>
             <td>Address</td>
             <td><input type="text" th:field="*{address}"></td>
-            <td th:if="${#fields.hasErrors('address')}" th:errors="*{address}">address error</td>
         </tr>
         <tr>
             <td>Birth day</td>
@@ -41,8 +40,8 @@
         </tr>
         <tr>
             <td>Phone</td>
-            <td><input type="text" th:field="*{phone_number}"></td>
-            <td th:if="${#fields.hasErrors('phone_number')}" th:errors="*{phone_number}">phone_number error</td>
+            <td><input type="text" th:field="*{phone}"></td>
+            <td th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">phone error</td>
         </tr>
         <tr>
             <td>Role</td>
@@ -52,9 +51,9 @@
             <td><input type="submit" value="Create user"></td>
         </tr>
     </table>
+    <th:block th:if="${message}">
+        <p th:text="${message}" style="color: red"></p>
+    </th:block>
 </form>
-<th:block th:if="${message}">
-    <p th:text="${message}" style="color: red"></p>
-</th:block>
 </body>
 </html>

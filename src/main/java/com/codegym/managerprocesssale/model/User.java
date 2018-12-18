@@ -7,6 +7,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import java.util.Date;
 
 @Entity
 @Table(name = "user")
@@ -24,7 +25,7 @@ public class User {
     @NotBlank(message = "Không để trống")
     private String name;
 
-    @NotBlank(message = "email is not blank")
+    @NotBlank(message = "email không để trống")
     @Email(message = "ví dụ: example@gmail.com")
     private String email;
 
@@ -32,7 +33,7 @@ public class User {
 
     @NotNull(message = "Ngày sinh không để trống")
     @DateTimeFormat(pattern ="yyyy-MM-dd")
-    private String birth_day;
+    private Date birth_day;
 
     @Pattern(regexp = "[0-9]{10}", message = "Số điện thoại bao gồm 10 số")
     private String phone;
@@ -42,7 +43,7 @@ public class User {
     public User() {
     }
 
-    public User(@NotBlank(message = "Không để trống") String user_name, @NotBlank(message = "Không để trống") String password, @NotBlank(message = "Không để trống") String name, @NotBlank(message = "email is not blank") @Email(message = "ví dụ: example@gmail.com") String email, String address, @NotNull(message = "Ngày sinh không để trống") String birth_day, @Pattern(regexp = "[0-9]{10}", message = "Số điện thoại bao gồm 10 số") String phone, int role) {
+    public User(@NotBlank(message = "Không để trống") String user_name, @NotBlank(message = "Không để trống") String password, @NotBlank(message = "Không để trống") String name, @NotBlank(message = "email is not blank") @Email(message = "ví dụ: example@gmail.com") String email, String address, @NotNull(message = "Ngày sinh không để trống") Date birth_day, @Pattern(regexp = "[0-9]{10}", message = "Số điện thoại bao gồm 10 số") String phone, int role) {
         this.user_name = user_name;
         this.password = password;
         this.name = name;
@@ -101,11 +102,11 @@ public class User {
         this.address = address;
     }
 
-    public String getBirth_day() {
+    public Date getBirth_day() {
         return birth_day;
     }
 
-    public void setBirth_day(String birth_day) {
+    public void setBirth_day(Date birth_day) {
         this.birth_day = birth_day;
     }
 
