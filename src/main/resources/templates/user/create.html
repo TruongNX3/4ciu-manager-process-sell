@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create new user</title>
+</head>
+<body>
+<a href="/">Back to List User</a>
+<h1>Create new user: </h1>
+<form th:action="@{/create-user}" th:object="${user}" method="post">
+    <table>
+        <tr>
+            <td>User Name</td>
+            <td><input type="text" th:field="*{user_name}"></td>
+            <td th:if="${#fields.hasErrors('user_name')}" th:errors="*{user_name}">user_name error</td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="text" th:field="*{password}"></td>
+            <td th:if="${#fields.hasErrors('password')}" th:errors="*{password}">password error</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" th:field="*{name}"></td>
+            <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="text" th:field="*{email}"></td>
+            <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">email error</td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><input type="text" th:field="*{address}"></td>
+            <td th:if="${#fields.hasErrors('address')}" th:errors="*{address}">address error</td>
+        </tr>
+        <tr>
+            <td>Birth day</td>
+            <td><input type="date" th:field="*{birth_day}"></td>
+            <td th:if="${#fields.hasErrors('birth_day')}" th:errors="*{birth_day}">birth day error</td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td><input type="text" th:field="*{phone_number}"></td>
+            <td th:if="${#fields.hasErrors('phone_number')}" th:errors="*{phone_number}">phone_number error</td>
+        </tr>
+        <tr>
+            <td>Role</td>
+            <td><input type="text" th:field="*{role}"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Create user"></td>
+        </tr>
+    </table>
+</form>
+<th:block th:if="${message}">
+    <p th:text="${message}" style="color: red"></p>
+</th:block>
+</body>
+</html>
