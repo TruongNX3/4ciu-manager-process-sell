@@ -1,6 +1,5 @@
 package com.codegym.managerprocesssale.service.impl;
 
-
 import com.codegym.managerprocesssale.model.Product;
 import com.codegym.managerprocesssale.repository.ProductRepository;
 import com.codegym.managerprocesssale.service.ProductService;
@@ -36,6 +35,6 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void remove(Integer id) {
-        productRepository.deleteById(id);
+    productRepository.deleteById(id);
     }
 }

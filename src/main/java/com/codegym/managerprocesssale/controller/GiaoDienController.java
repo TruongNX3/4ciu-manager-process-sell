@@ -10,4 +10,9 @@ public class GiaoDienController {
     public ModelAndView index() {
         return new ModelAndView("giaodien/index");
     }
+
+    @GetMapping("checkout")
+    public ModelAndView checkOutCart() {
+        return new ModelAndView("giaodien/checkout");
+    }
 }
