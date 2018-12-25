@@ -42,7 +42,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/registration").permitAll()
                 // hasRole(roleName) Chỉ cho phép các user có GrantedAuthority là Role_roleName mới được phép truy cập
                 .antMatchers("/member").hasRole("MEMBER")
-                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/templates/admin/**").hasRole("ADMIN")
                 .and()
                 .formLogin().successHandler(customizeAuthenticationSuccessHandler)
                 // Đường dẫn tới form đăng nhập
