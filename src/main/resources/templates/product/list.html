@@ -222,7 +222,7 @@
                                             <td th:text="${istart.index + 1}"></td>
                                             <td th:text="${image.product.id}"></td>
                                             <td th:text="${image.product.name}"></td>
-                                            <td><img th:src="@{/resources/__${image.url}__}" height="100px" width="100px"></td>
+                                            <td><img th:src="@{/__${image.url}__}" height="100px" width="100px"></td>
                                             <td th:text="${image.product.color}"></td>
                                             <td th:text="${image.product.machineType}"></td>
                                             <td th:text="${image.product.size}"></td>
