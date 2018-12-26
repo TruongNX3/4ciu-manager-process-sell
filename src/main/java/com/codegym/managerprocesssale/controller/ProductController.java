@@ -97,7 +97,7 @@ public class ProductController {
 //            Integer id = product.getId();
 //            imageProducts.add(imageProductService.findAllByAvafindAllByAvatarAndProductId(0, id));
 //        }
-        Iterable<ImageProduct> imageProducts = imageProductService.findAllByAvatar(0);
+        Page<ImageProduct> imageProducts = imageProductService.findAllByAvatar(pageable,0);
 
         ModelAndView modelAndView = new ModelAndView("product/list");
         modelAndView.addObject("products", products);
