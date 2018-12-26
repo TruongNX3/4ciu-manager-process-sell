@@ -23,6 +23,7 @@
 
 </head>
 <body>
+<<<<<<< Updated upstream
 
 <h1>ĐỒNG HỒ XỊN</h1>
 
@@ -120,6 +121,73 @@
             </table>
         </form>
         </table>
+=======
+
+<div class="wrapper">
+    <div class="sidebar" data-color="purple"  th:src="@{/img/hsidebar-5.jpg}">
+
+        <!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
+
+
+        <div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="http://www.creative-tim.com" class="simple-text">
+                    Creative Tim
+                </a>
+            </div>
+
+            <ul class="nav">
+                <li>
+                    <a href="/bills">
+                        <i class="pe-7s-graph"></i>
+                        <p>Tổng Quan</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/productTypes">
+                        <i class="pe-7s-user"></i>
+                        <p>Quản lý loại sản phẩm</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a  href="/admin/products">
+                        <i class="pe-7s-note2"></i>
+                        <p>Quản Lý Sản Phẩm</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/customers">
+                        <i class="pe-7s-news-paper"></i>
+                        <p>Quản Trị Khách Hàng</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="icons.html">
+                        <i class="pe-7s-science"></i>
+                        <p>Icons</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="maps.html">
+                        <i class="pe-7s-map-marker"></i>
+                        <p>Maps</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="notifications.html">
+                        <i class="pe-7s-bell"></i>
+                        <p>Notifications</p>
+                    </a>
+                </li>
+                <li class="active-pro">
+                    <a href="upgrade.html">
+                        <i class="pe-7s-rocket"></i>
+                        <p>Upgrade to PRO</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+>>>>>>> Stashed changes
     </div>
 </div>
 
@@ -127,5 +195,115 @@
     <p> &copy; shop đồng hồ | đồng hồ uy tín chất lượng</p>
 </div>
 
+<<<<<<< Updated upstream
+=======
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Danh Sách Sản Phẩm</h4>
+                                <form action="">
+                                    Tìm kiếm sản phẩm :
+                                    <input type="text" name="s">
+                                    <input type="submit" value="Search">
+                                </form><br/>
+                                <a href="/admin/create-product">Thêm Sản Phẩm</a>
+                                |<a th:href="@{/card}">Giỏ hàng</a>|
+                                <a th:href="@{/admin/products}">Danh sách sản phẩm</a>
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                                <table class="table table-hover table-striped">
+                                    <form th:action="@{/admin/delete-product}" th:object="${product}" method="post">
+                                        <input th:type="hidden" name="id" th:field="*{id}">
+                                        <table>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td><input type="text" th:field="*{name}"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Image</td>
+                                                <td><input type="text" th:field="*{image}"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Image1</td>
+                                                <td><input type="text" th:field="*{image1}"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Image2</td>
+                                                <td><input type="text" th:field="*{image2}"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Image3</td>
+                                                <td><input type="text" th:field="*{image3}"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Màu Sắc</td>
+                                                <td><input type="text" th:field="*{color}"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sản Phảm Hot</td>
+                                                <td><input type="text" th:field="*{hot}"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Kiểu Máy</td>
+                                                <td><input type="text" th:field="*{machineType}"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Kích cỡ</td>
+                                                <td><input type="text" th:field="*{size}"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Chất liệu vỏ</td>
+                                                <td><input type="text" th:field="*{materialShell}"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Chống nước</td>
+                                                <td><input type="text" th:field="*{waterproof}"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mặt Kính</td>
+                                                <td><input type="text" th:field="*{faceGlass}"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Chi tiết</td>
+                                                <td><input type="text" th:field="*{detail}"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Giá Sản Phảm</td>
+                                                <td><input type="text" th:field="*{unitPrice}"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Giá Khuyến Mãi</td>
+                                                <td><input type="text" th:field="*{promotionPrice}"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>ID Chủng Loại</td>
+                                                <td><input type="text" th:field="*{idType}"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>ID Nhà Sản Xuất</td>
+                                                <td><input type="text" th:field="*{idProducer}"></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td><input type="submit" value="Xóa Sản Phẩm"></td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </table>
+                                <div>
+                                    <a th:href="@{'/products'(page=${products.number - 1})}" th:if="${products.hasPrevious()}">Previous</a>
+                                    <span th:text="${products.number + 1}"></span>/<span th:text="${products.totalPages}"></span>
+                                    <a th:href="@{'/products'(page=${products.number + 1})}" th:if="${products.hasNext()}">Next</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+>>>>>>> Stashed changes
 </body>
 </html>

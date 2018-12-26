@@ -14,13 +14,9 @@ public class Product {
     private Integer id;
     @NotEmpty(message = "không được để trống")
     private String name;
-
     private String image;
-
     private String image1;
-
     private String image2;
-
     private String image3;
     @NotEmpty(message = "không được để trống")
     private String color;
@@ -38,11 +34,16 @@ public class Product {
     private String faceGlass;
     @NotEmpty(message = "không được để trống")
     private String detail;
+<<<<<<< Updated upstream
     @NotEmpty(message = "không được để trống")
     private String unitPrice;
+=======
+    private long unitPrice;
+>>>>>>> Stashed changes
     @NotEmpty(message = "không được để trống")
     private String promotionPrice;
 
+<<<<<<< Updated upstream
     public ProductType getProductType() {
         return productType;
     }
@@ -77,6 +78,18 @@ public class Product {
     public void setProducer(Producer producer) {
         this.producer = producer;
     }
+=======
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    }
+
+    @OneToOne(targetEntity = Item.class)
+    private Item item;
+>>>>>>> Stashed changes
 
     public Product() {
 

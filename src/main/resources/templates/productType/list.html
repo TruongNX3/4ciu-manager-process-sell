@@ -54,13 +54,21 @@
                     </a>
                 </li>
                 <li>
+<<<<<<< Updated upstream:src/main/resources/templates/productType/list.html
                     <a href="/admin/users">
+=======
+                    <a href="/admin/productTypes">
+>>>>>>> Stashed changes:src/main/resources/templates/card/card.html
                         <i class="pe-7s-user"></i>
-                        <p>Quản Trị Thành Viên</p>
+                        <p>Quản lý loại sản phẩm</p>
                     </a>
                 </li>
                 <li class="active">
+<<<<<<< Updated upstream:src/main/resources/templates/productType/list.html
                     <a  href="admin/products">
+=======
+                    <a  href="/admin/products">
+>>>>>>> Stashed changes:src/main/resources/templates/card/card.html
                         <i class="pe-7s-note2"></i>
                         <p>Quản Lý Sản Phẩm</p>
                     </a>
@@ -195,6 +203,12 @@
                                         <a href="/admin/create-productType">Thêm Loại Sản Phẩm</a>
                                     </p>
                                 </form><br/>
+<<<<<<< Updated upstream:src/main/resources/templates/productType/list.html
+=======
+                                <a href="/admin/create-product">Thêm Sản Phẩm</a>
+                                |<a th:href="@{/card}">Giỏ hàng</a>|
+                                <a th:href="@{/admin/products}">Danh sách sản phẩm</a>
+>>>>>>> Stashed changes:src/main/resources/templates/card/card.html
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover table-striped">
@@ -214,9 +228,53 @@
                                             <td><a th:href="@{/admin/edit-productType/__${productType.id}__ }">Sửa</a></td>
                                             <td><a th:href="@{/admin/delete-productType/__${productType.id}__ }">Xóa</a></td>
                                         </tr>
+<<<<<<< Updated upstream:src/main/resources/templates/productType/list.html
                                     </th:block>
                                     </tbody>
                                 </table>
+=======
+                                        <!--<p th:text="${session.order.items}" th:unless="${session == null}"> . </p>-->
+                                        <th:block th:each="item: ${session.order.items}" th:unless="${session == null}" th:object="${OrderDetails}">
+                                            <tr>
+                                                <td th:text="${item.product.id}"></td>
+                                                <td th:text="${item.product.name}"></td>
+                                                <td th:text="${item.product.image1}"></td>
+                                                <td th:text="${item.product.unitPrice}"></td>
+                                                <td th:text="${item.quantity}"></td>
+                                                <td th:text="${item.product.unitPrice*item.quantity}" class="dongia"></td>
+                                            </tr>
+                                        </th:block>
+                                        <button style="color: red" method="post" th:action="@{/order-details}">Đặt hàng</button>
+                                        <script type="application/javascript">
+                                            var sum = 0;
+                                            var table = document.getElementById("res");
+                                            var ths = table.getElementsByTagName('th');
+                                            var tds = table.getElementsByClassName('dongia');
+                                            for(var i=0;i<tds.length;i++){
+                                                sum += isNaN(tds[i].innerText) ? 0 : parseInt(tds[i].innerText);
+                                            }
+
+                                            var row = table.insertRow(table.rows.length);
+                                            var cell = row.insertCell(0);
+                                            cell.setAttribute('colspan', ths.length);
+
+                                            var totalBalance  = document.createTextNode('Total Balance ' + sum);
+                                            cell.appendChild(totalBalance);
+                                        </script>
+                                    </table>
+
+                                <!--<p>-->
+                                <!--<form method="post" th:action="@{/order-details}" th:object="${OrderDetails}">-->
+                                    <!--<input type="text" th:field="*{id}" th:value="${item.product.id}">-->
+                                    <!--<input type="text" th:field="*{name}" th:value="${item.product.name}">-->
+                                    <!--<input type="text" th:field="*{photo}" th:value="${item.product.image1}">-->
+                                    <!--<input type="text" th:field="*{price}" th:value="${item.product.unitPrice}">-->
+                                    <!--<input type="text" th:field="*{quantity}" th:value="${item.quantity}">-->
+                                    <!--<input type="text" th:field="*{sum}" th:value="${item.product.unitPrice*item.quantity}">-->
+                                    <!--<button style="color: red">Đặt hàng</button>-->
+                                <!--</form>-->
+                                <!--</p>-->
+>>>>>>> Stashed changes:src/main/resources/templates/card/card.html
                                 <div>
                                     <a th:href="@{'/productTypes'(page=${productTypes.number - 1})}" th:if="${productTypes.hasPrevious()}">Previous</a>
                                     <span th:text="${productTypes.number + 1}"></span>/<span th:text="${productTypes.totalPages}"></span>

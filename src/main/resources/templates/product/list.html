@@ -55,13 +55,21 @@
                     </a>
                 </li>
                 <li>
+<<<<<<< Updated upstream
                     <a href="users">
+=======
+                    <a href="/admin/productTypes">
+>>>>>>> Stashed changes
                         <i class="pe-7s-user"></i>
-                        <p>Quản Trị Thành Viên</p>
+                        <p>Quản lý loại sản phẩm</p>
                     </a>
                 </li>
                 <li class="active">
+<<<<<<< Updated upstream
                     <a  href="products">
+=======
+                    <a  href="/admin/products">
+>>>>>>> Stashed changes
                         <i class="pe-7s-note2"></i>
                         <p>Quản Lý Sản Phẩm</p>
                     </a>
@@ -196,6 +204,12 @@
                                         <a th:href="@{create-product}">Thêm Sản Phẩm</a>
                                     </p>
                                 </form><br/>
+<<<<<<< Updated upstream
+=======
+                                <a href="/admin/create-product">Thêm Sản Phẩm</a>
+                                |<a th:href="@{/card}">Giỏ hàng</a>|
+                                <a th:href="@{/admin/products}">Danh sách sản phẩm</a>
+>>>>>>> Stashed changes
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover table-striped">
@@ -220,6 +234,7 @@
                                     <th:block th:each="image, istart : ${listImages}">
                                         <tr>
                                             <td th:text="${istart.index + 1}"></td>
+<<<<<<< Updated upstream
                                             <td th:text="${image.product.id}"></td>
                                             <td th:text="${image.product.name}"></td>
                                             <td><img th:src="@{/resources/__${image.url}__}" height="100px" width="100px"></td>
@@ -234,6 +249,22 @@
                                             <td th:text="${image.product.producer.name}"></td>
                                             <td><a th:href="@{edit-product/__${image.product.id}__ }">Sửa</a></td>
                                             <td><a th:href="@{delete-product/__${image.product.id}__ }">Xóa</a></td>
+=======
+                                            <td th:text="${product.id}"></td>
+                                            <td th:text="${product.name}"></td>
+                                            <td th:text="${product.color}"></td>
+                                            <td th:text="${product.machineType}"></td>
+                                            <td th:text="${product.size}"></td>
+                                            <td th:text="${product.materialShell}"></td>
+                                            <td th:text="${product.waterproof}"></td>
+                                            <td th:text="${product.faceGlass}"></td>
+                                            <td th:text="${product.unitPrice}"></td>
+                                            <td th:text="${product.idType}"></td>
+                                            <td th:text="${product.idProducer}"></td>
+                                            <td><a th:href="@{/admin/edit-product/__${product.id}__ }">Sửa</a></td>
+                                            <td><a th:href="@{/admin/delete-product/__${product.id}__ }">Xóa</a></td>
+                                            <td><a th:href="@{/addtocard/__${product.id}__ }">Mua</a></td>
+>>>>>>> Stashed changes
                                         </tr>
                                     </th:block>
                                     </tbody>
